@@ -5,7 +5,7 @@ import { IoReorderThree } from "react-icons/io5";
 
 const Header = () => {
   return (
-    <header className="py-8 xl:py-12 ">
+    <header className="py-8 xl:py-8 ">
       <div className="container mx-auto flex justify-between items-center">
         <Link href="/">
           <div>

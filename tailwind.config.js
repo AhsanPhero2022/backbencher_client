@@ -22,6 +22,10 @@ export default {
       xl: "1200px",
     },
   },
+  container: {
+    center: true,
+    padding: "15px",
+  },
 
   plugins: [require("daisyui")],
 };

@@ -34,9 +34,7 @@ const Navbar = () => {
             key={index}
             to={link.path}
             className={`${
-              link.path === pathname
-                ? "text-accent border-b-2 border-accent"
-                : ""
+              link.path === pathname && "text-accent border-b-2 border-accent"
             } capitalize font-medium hover:text-accent`}
           >
             {link.name}
