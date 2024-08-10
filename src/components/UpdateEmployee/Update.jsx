@@ -1,20 +1,32 @@
 import { useForm } from "react-hook-form";
+import { useLoaderData } from "react-router-dom";
 import { toast } from "sonner";
 
-const AddEmployee = () => {
+const Update = () => {
+  const data = useLoaderData();
+  const { id, name, image, title, description, company } = data.data;
+  console.log(data.data);
+
   const {
     register,
     handleSubmit,
     formState: { errors },
-    reset,
-  } = useForm();
+  } = useForm({
+    defaultValues: {
+      name,
+      image,
+      title,
+      description,
+      company,
+    },
+  });
 
   const onSubmit = async (data) => {
     try {
       const response = await fetch(
-        "https://backbencher-server.vercel.app/add",
+        `https://backbencher-server.vercel.app/${id}`,
         {
-          method: "POST",
+          method: "PUT",
           headers: {
             "Content-Type": "application/json",
           },
@@ -23,36 +35,21 @@ const AddEmployee = () => {
       );
 
       if (response.ok) {
-        toast("Data created successfully");
-        reset();
+        toast.success("Data updated successfully!");
       } else {
-        toast("Failed to add data");
+        toast.error("Failed to update data");
       }
     } catch (error) {
-      toast.error("Error:", error);
+      console.error("Error:", error);
     }
   };
 
   return (
-    <div className="container">
-      <div className="bg-primary text-white/80">
-        <h1 className="text-center text-3xl font-semibold my-12 capitalize py-3 ">
-          Please add your new Employee
-        </h1>
-      </div>
+    <div className="container ">
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="flex flex-col justify-center items-center gap-8 mt-8">
           <input
             className="px-4 py-2 w-full xl:w-[800px] lg:w-[500px] bg-primary text-accent rounded"
-            placeholder="Employee ID"
-            {...register("id", { required: "Id is required" })}
-          />
-          {errors.id && (
-            <p className="text-red-500 text-sm">{errors.id.message}</p>
-          )}
-          <input
-            className="px-4 py-2 w-full xl:w-[800px] lg:w-[500px] bg-primary text-accent rounded"
-            placeholder="Name"
             {...register("name", { required: "Name is required" })}
           />
           {errors.name && (
@@ -61,7 +58,6 @@ const AddEmployee = () => {
 
           <input
             className="px-4 py-2 w-full xl:w-[800px] lg:w-[500px] bg-primary text-accent rounded"
-            placeholder="Title"
             {...register("title", { required: "Title is required" })}
           />
           {errors.title && (
@@ -70,16 +66,14 @@ const AddEmployee = () => {
 
           <input
             className="px-4 py-2 w-full xl:w-[800px] lg:w-[500px] bg-primary text-accent rounded"
-            placeholder="Experience"
             {...register("description", { required: "Experience is required" })}
           />
-          {errors.experience && (
+          {errors.description && (
             <p className="text-red-500 text-sm">{errors.description.message}</p>
           )}
 
           <input
             className="px-4 py-2 w-full xl:w-[800px] lg:w-[500px] bg-primary text-accent rounded"
-            placeholder="Company"
             {...register("company", { required: "Company is required" })}
           />
           {errors.company && (
@@ -88,10 +82,9 @@ const AddEmployee = () => {
 
           <input
             className="px-4 py-2 w-full xl:w-[800px] lg:w-[500px] bg-primary text-accent rounded"
-            placeholder="Photo URL"
             {...register("image", { required: "Photo URL is required" })}
           />
-          {errors.photo && (
+          {errors.image && (
             <p className="text-red-500 text-sm">{errors.image.message}</p>
           )}
         </div>
@@ -110,4 +103,4 @@ const AddEmployee = () => {
   );
 };
 
-export default AddEmployee;
+export default Update;

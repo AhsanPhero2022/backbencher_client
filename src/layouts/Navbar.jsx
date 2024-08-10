@@ -6,7 +6,7 @@ const links = [
     path: "/",
   },
   {
-    name: "Employees",
+    name: "All_Employees",
     path: "/employees",
   },
   {

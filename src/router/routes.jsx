@@ -5,6 +5,7 @@ import AddEmployee from "../components/AddEmployee/AddEmployee";
 import Employees from "../components/Employees/Employees";
 import UpdateEmployee from "../components/UpdateEmployee/UpdateEmployee";
 import DeleteEmployee from "../components/DeleteEmployee/DeleteEmployee";
+import Update from "../components/UpdateEmployee/Update";
 
 export const router = createBrowserRouter([
   {
@@ -30,6 +31,19 @@ export const router = createBrowserRouter([
       {
         path: "/delete_employee",
         element: <DeleteEmployee />,
+      },
+      {
+        path: "/update/:id",
+        element: <Update />,
+        loader: async ({ params }) => {
+          const response = await fetch(
+            `https://backbencher-server.vercel.app/${params.id}`
+          );
+          if (!response.ok) {
+            throw new Error("Failed to fetch data");
+          }
+          return response.json();
+        },
       },
     ],
   },
