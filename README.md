@@ -4,6 +4,8 @@
 
 This project is a simple Employee Management System built with React.js, Tailwind CSS, and Sonner toast. It allows users to create, read, update, and delete employee information.
 
+- **Client Live Demo**: [Employee Management System Client](https://backbencher-client.vercel.app)
+
 ## Key Features
 
 - **Create Employee**: Add new employees to the system with ease.
