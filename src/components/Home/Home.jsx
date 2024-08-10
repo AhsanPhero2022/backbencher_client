@@ -1,7 +1,15 @@
+import HeroSection from "./AllSection/HeroSection";
+import Slider from "./AllSection/Slider";
+import WeWork from "./AllSection/WeWork";
+import Who from "./AllSection/Who";
+
 const Home = () => {
   return (
     <div>
-      <h1>this is home</h1>
+      <HeroSection />
+      <WeWork />
+      <Who />
+      <Slider />
     </div>
   );
 };
