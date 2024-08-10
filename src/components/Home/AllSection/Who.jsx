@@ -1,14 +1,14 @@
 const Who = () => {
   return (
-    <div className="bg-primary py-12 text-white/80">
+    <div className="bg-primary py-12 text-white/80 mx-auto">
       <div className="container flex flex-col lg:flex-row gap-8">
-        <div className="w-[50%]">
+        <div className="lg:w-[50%]">
           <img
             src="https://axtra-next-agency.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2F1.155b0493.jpg&w=640&q=75"
             alt=""
           />
         </div>
-        <div className="w-[50%] my-12 ">
+        <div className="lg:w-[50%] my-12 ">
           <h1 className="text-3xl font-bold text-accent uppercase">
             Who We Are
           </h1>

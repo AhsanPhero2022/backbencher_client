@@ -8,9 +8,11 @@ const HeroSection = () => {
 
       <div className="flex flex-col  lg:flex-row xl:flex-row justify-between items-center my-5">
         <div>
-          <h1 className="text-[200px]  uppercase font-bold -mt-20">Mark</h1>
+          <h1 className="lg:text-[200px] text-[100px]  uppercase font-bold lg:-mt-20">
+            Mark
+          </h1>
         </div>
-        <div className="flex justify-center -mt-12 items-center gap-3 mx-auto">
+        <div className="flex justify-center lg:-mt-12 items-center gap-3 mx-auto">
           <div className="flex justify-center">
             <iframe
               width="200"
@@ -36,7 +38,9 @@ const HeroSection = () => {
           </h1>
         </div>
         <div className=" w-full col-span-8">
-          <h1 className="text-[200px]  uppercase font-bold -mt-28 ">eting</h1>
+          <h1 className="text-[100px] lg:text-[200px]  uppercase font-bold lg:-mt-28 ">
+            eting
+          </h1>
         </div>
       </div>
     </div>
