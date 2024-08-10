@@ -24,6 +24,7 @@ const AddEmployee = () => {
 
       if (response.ok) {
         toast("Data created successfully");
+
         reset();
       } else {
         toast("Failed to add data");

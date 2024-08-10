@@ -14,11 +14,21 @@ const UpdateEmployee = () => {
   }, []);
 
   if (loading) {
-    return <p>Loading...</p>;
+    return (
+      <p className="text-xl font-semibold text-center text-accent">
+        Data Loading...
+        <l-line-spinner
+          size="40"
+          stroke="3"
+          speed="1"
+          color="green"
+        ></l-line-spinner>
+      </p>
+    );
   }
 
   return (
-    <div className="overflow-x-auto container">
+    <div className="overflow-x-auto my-12 container">
       <table className="table">
         {/* head */}
         <thead>
