@@ -38,7 +38,7 @@ const DeleteEmployee = () => {
 
   if (loading) {
     return (
-      <p className="text-xl font-semibold text-center text-accent">
+      <p className="my-12 text-xl font-semibold text-center text-accent">
         Data Loading...
         <l-line-spinner
           size="40"

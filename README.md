@@ -1,8 +1,34 @@
 # React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Employee Management System
 
-Currently, two official plugins are available:
+This project is a simple Employee Management System built with React.js, Tailwind CSS, and Sonner toast. It allows users to create, read, update, and delete employee information.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Key Features
+
+- **Create Employee**: Add new employees to the system with ease.
+- **Read Employee**: View a list of all employees in the system.
+- **Update Employee**: Edit existing employee details.
+- **Delete Employee**: Remove employees from the system.
+
+## Technologies Used
+
+- **React.js**: A JavaScript library for building user interfaces.
+- **Tailwind CSS**: A utility-first CSS framework for rapid UI development.
+- **postgresql database**: A SQL database, very first schema.
+
+- **Sonner Toast**: A lightweight toast notification library for React.
+
+## Getting Started
+
+To run the project locally, follow these steps:
+
+1. **Clone the repository**:
+
+   ```bash
+   git clone https://github.com/AhsanPhero2022/backbencher_client
+
+   cd backbencher_client
+   npm install
+   npm run dev
+   ```

@@ -18,7 +18,7 @@ const Employees = () => {
 
   if (loading) {
     return (
-      <p className="text-xl font-semibold text-center text-accent">
+      <p className="my-12 text-xl font-semibold text-center text-accent">
         Data Loading...
         <l-line-spinner
           size="40"
@@ -31,7 +31,7 @@ const Employees = () => {
   }
 
   return (
-    <div className="container">
+    <div className="container my-12">
       <div className="flex md:flex-col gap-6 flex-col xl:flex-row lg:flex-row py-12 items-center justify-between ">
         <div className="flex-1 ">
           <p className="text-2xl font-bold text-gray-800">
